@@ -38,6 +38,12 @@ User.init(
                 len: [8],
             },
         },
+        article_count: {
+            type: DataTypes.INTEGER,
+        },
+        profile_img_link: {
+            type: DataTypes.STRING,
+        },
         favorite_team_id: {
             type: DataTypes.INTEGER,
             references: {
