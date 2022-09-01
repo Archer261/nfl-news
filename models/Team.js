@@ -1,5 +1,5 @@
-const { Model, DataTypes } = require("sequelize");
-const sequelize = require("../config/connection");
+const { Model, DataTypes } = require('sequelize');
+const sequelize = require('../config/connection');
 
 class Team extends Model {}
 
@@ -19,6 +19,9 @@ Team.init(
             type: DataTypes.STRING,
             allowNull: false,
         },
+        location_abbr: {
+            type: DataTypes.STRING,
+        },
         logo_path: {
             type: DataTypes.STRING,
         },
@@ -28,7 +31,7 @@ Team.init(
         timestamps: false,
         freezeTableName: true,
         underscored: true,
-        modelName: "team",
+        modelName: 'team',
     }
 );
 
