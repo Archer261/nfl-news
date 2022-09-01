@@ -5,15 +5,10 @@ class Team extends Model {}
 
 Team.init(
     {
-        id: {
-            type: DataTypes.INTEGER,
-            allowNull: false,
-            primaryKey: true,
-            autoIncrement: true,
-        },
         team_name: {
             type: DataTypes.STRING,
             allowNull: false,
+            primaryKey: true,
         },
         location: {
             type: DataTypes.STRING,
