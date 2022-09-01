@@ -1,0 +1,22 @@
+[
+    {
+        "tier_name": "Bronze",
+        "min_articles": 1,
+        "logo_path": ""
+    },
+    {
+        "tier_name": "Silver",
+        "min_articles": 10,
+        "logo_path": ""
+    },
+    {
+        "tier_name": "Gold",
+        "min_articles": 25,
+        "logo_path": ""
+    },
+    {
+        "tier_name": "Platinum",
+        "min_articles": 50,
+        "logo_path": ""
+    }
+]
