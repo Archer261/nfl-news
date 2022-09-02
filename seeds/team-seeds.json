@@ -1,194 +1,194 @@
 [
-    {
-        "team_name": "Cardinals",
-        "location": "Arizona",
-        "location_abbr": "ari",
-        "logo_path": ""
-    },
-    {
-        "team_name": "Falcons",
-        "location": "Atlanta",
-        "location_abbr": "atl",
-        "logo_path": ""
-    },
-    {
-        "team_name": "Ravens",
-        "location": "Baltimore",
-        "location_abbr": "bal",
-        "logo_path": ""
-    },
-    {
-        "team_name": "Bills",
-        "location": "Buffalo",
-        "location_abbr": "buf",
-        "logo_path": ""
-    },
-    {
-        "team_name": "Panthers",
-        "location": "Carolina",
-        "location_abbr": "car",
-        "logo_path": ""
-    },
-    {
-        "team_name": "Bears",
-        "location": "Chicago",
-        "location_abbr": "chi",
-        "logo_path": ""
-    },
-    {
-        "team_name": "Bengals",
-        "location": "Cincinnati",
-        "location_abbr": "cin",
-        "logo_path": ""
-    },
-    {
-        "team_name": "Browns",
-        "location": "Cleveland",
-        "location_abbr": "cle",
-        "logo_path": ""
-    },
-    {
-        "team_name": "Cowboys",
-        "location": "Dallas",
-        "location_abbr": "dal",
-        "logo_path": ""
-    },
-    {
-        "team_name": "Broncos",
-        "location": "Denver",
-        "location_abbr": "den",
-        "logo_path": ""
-    },
-    {
-        "team_name": "Lions",
-        "location": "Detroit",
-        "location_abbr": "det",
-        "logo_path": ""
-    },
-    {
-        "team_name": "Packers",
-        "location": "Green Bay",
-        "location_abbr": "gb",
-        "logo_path": ""
-    },
-    {
-        "team_name": "Texans",
-        "location": "Houston",
-        "location_abbr": "hou",
-        "logo_path": ""
-    },
-    {
-        "team_name": "Colts",
-        "location": "Indianapolis",
-        "location_abbr": "ind",
-        "logo_path": ""
-    },
-    {
-        "team_name": "Jaguars",
-        "location": "Jacksonville",
-        "location_abbr": "jax",
-        "logo_path": ""
-    },
-    {
-        "team_name": "Chiefs",
-        "location": "Kansas City",
-        "location_abbr": "kc",
-        "logo_path": ""
-    },
-    {
-        "team_name": "Raiders",
-        "location": "Las Vegas",
-        "location_abbr": "lv",
-        "logo_path": ""
-    },
-    {
-        "team_name": "Chargers",
-        "location": "Los Angeles",
-        "location_abbr": "lac",
-        "logo_path": ""
-    },
-    {
-        "team_name": "Rams",
-        "location": "Los Angeles",
-        "location_abbr": "lar",
-        "logo_path": ""
-    },
-    {
-        "team_name": "Dolphins",
-        "location": "Miami",
-        "location_abbr": "mia",
-        "logo_path": ""
-    },
-    {
-        "team_name": "Vikings",
-        "location": "Minnesota",
-        "location_abbr": "min",
-        "logo_path": ""
-    },
-    {
-        "team_name": "Patriots",
-        "location": "New England",
-        "location_abbr": "ne",
-        "logo_path": ""
-    },
-    {
-        "team_name": "Saints",
-        "location": "New Orleans",
-        "location_abbr": "no",
-        "logo_path": ""
-    },
-    {
-        "team_name": "Giants",
-        "location": "New York",
-        "location_abbr": "nyg",
-        "logo_path": ""
-    },
-    {
-        "team_name": "Jets",
-        "location": "New York",
-        "location_abbr": "nyj",
-        "logo_path": ""
-    },
-    {
-        "team_name": "Eagles",
-        "location": "Philadelphia",
-        "location_abbr": "phi",
-        "logo_path": ""
-    },
-    {
-        "team_name": "Steelers",
-        "location": "Pittsburgh ",
-        "location_abbr": "pit",
-        "logo_path": ""
-    },
-    {
-        "team_name": "49ers",
-        "location": "San Francisco",
-        "location_abbr": "sf",
-        "logo_path": ""
-    },
-    {
-        "team_name": "Seahawks",
-        "location": "Seattle",
-        "location_abbr": "sea",
-        "logo_path": ""
-    },
-    {
-        "team_name": "Buccaneers",
-        "location": "Tampa Bay",
-        "location_abbr": "tb",
-        "logo_path": ""
-    },
-    {
-        "team_name": "Titans",
-        "location": "Tennessee",
-        "location_abbr": "ten",
-        "logo_path": ""
-    },
-    {
-        "team_name": "Commanders",
-        "location": "Washington ",
-        "location_abbr": "wsh",
-        "logo_path": ""
-    }
+  {
+    "team_name": "Cardinals",
+    "location": "Arizona",
+    "location_abbr": "ari",
+    "logo_path": "az_cardinals.png"
+  },
+  {
+    "team_name": "Falcons",
+    "location": "Atlanta",
+    "location_abbr": "atl",
+    "logo_path": "atl_falcons.png"
+  },
+  {
+    "team_name": "Ravens",
+    "location": "Baltimore",
+    "location_abbr": "bal",
+    "logo_path": "bm_ravens.png"
+  },
+  {
+    "team_name": "Bills",
+    "location": "Buffalo",
+    "location_abbr": "buf",
+    "logo_path": "bf_bills.png"
+  },
+  {
+    "team_name": "Panthers",
+    "location": "Carolina",
+    "location_abbr": "car",
+    "logo_path": "cl_panthers.png"
+  },
+  {
+    "team_name": "Bears",
+    "location": "Chicago",
+    "location_abbr": "chi",
+    "logo_path": "chi_bears.png"
+  },
+  {
+    "team_name": "Bengals",
+    "location": "Cincinnati",
+    "location_abbr": "cin",
+    "logo_path": "cn_bengals.png"
+  },
+  {
+    "team_name": "Browns",
+    "location": "Cleveland",
+    "location_abbr": "cle",
+    "logo_path": "cd_browns.png"
+  },
+  {
+    "team_name": "Cowboys",
+    "location": "Dallas",
+    "location_abbr": "dal",
+    "logo_path": "dl_cowboys_png"
+  },
+  {
+    "team_name": "Broncos",
+    "location": "Denver",
+    "location_abbr": "den",
+    "logo_path": "dv_broncos.png"
+  },
+  {
+    "team_name": "Lions",
+    "location": "Detroit",
+    "location_abbr": "det",
+    "logo_path": "de_lions.png"
+  },
+  {
+    "team_name": "Packers",
+    "location": "Green Bay",
+    "location_abbr": "gb",
+    "logo_path": "gb_packers.png"
+  },
+  {
+    "team_name": "Texans",
+    "location": "Houston",
+    "location_abbr": "hou",
+    "logo_path": "hou_texans.png"
+  },
+  {
+    "team_name": "Colts",
+    "location": "Indianapolis",
+    "location_abbr": "ind",
+    "logo_path": "in_colts.png"
+  },
+  {
+    "team_name": "Jaguars",
+    "location": "Jacksonville",
+    "location_abbr": "jax",
+    "logo_path": "jv_jaguars.png"
+  },
+  {
+    "team_name": "Chiefs",
+    "location": "Kansas City",
+    "location_abbr": "kc",
+    "logo_path": "kc_chiefs.png"
+  },
+  {
+    "team_name": "Raiders",
+    "location": "Las Vegas",
+    "location_abbr": "lv",
+    "logo_path": "lv_raiders.png"
+  },
+  {
+    "team_name": "Chargers",
+    "location": "Los Angeles",
+    "location_abbr": "lac",
+    "logo_path": "la_chargers.png"
+  },
+  {
+    "team_name": "Rams",
+    "location": "Los Angeles",
+    "location_abbr": "lar",
+    "logo_path": "la_rams.png"
+  },
+  {
+    "team_name": "Dolphins",
+    "location": "Miami",
+    "location_abbr": "mia",
+    "logo_path": "mi_dolphins.png"
+  },
+  {
+    "team_name": "Vikings",
+    "location": "Minnesota",
+    "location_abbr": "min",
+    "logo_path": "mn_vikings.png"
+  },
+  {
+    "team_name": "Patriots",
+    "location": "New England",
+    "location_abbr": "ne",
+    "logo_path": "ne_patriots.png"
+  },
+  {
+    "team_name": "Saints",
+    "location": "New Orleans",
+    "location_abbr": "no",
+    "logo_path": "no_saints.png"
+  },
+  {
+    "team_name": "Giants",
+    "location": "New York",
+    "location_abbr": "nyg",
+    "logo_path": "ny_giants.png"
+  },
+  {
+    "team_name": "Jets",
+    "location": "New York",
+    "location_abbr": "nyj",
+    "logo_path": "ny_jets.png"
+  },
+  {
+    "team_name": "Eagles",
+    "location": "Philadelphia",
+    "location_abbr": "phi",
+    "logo_path": "ph_eagles.png"
+  },
+  {
+    "team_name": "Steelers",
+    "location": "Pittsburgh ",
+    "location_abbr": "pit",
+    "logo_path": "pb_steelers.png"
+  },
+  {
+    "team_name": "49ers",
+    "location": "San Francisco",
+    "location_abbr": "sf",
+    "logo_path": "sf_49ers.png"
+  },
+  {
+    "team_name": "Seahawks",
+    "location": "Seattle",
+    "location_abbr": "sea",
+    "logo_path": "se_seahawks.png"
+  },
+  {
+    "team_name": "Buccaneers",
+    "location": "Tampa Bay",
+    "location_abbr": "tb",
+    "logo_path": "tb_buccaneers.png"
+  },
+  {
+    "team_name": "Titans",
+    "location": "Tennessee",
+    "location_abbr": "ten",
+    "logo_path": "tn_titans.png"
+  },
+  {
+    "team_name": "Commanders",
+    "location": "Washington ",
+    "location_abbr": "wsh",
+    "logo_path": "wa_commanders.png"
+  }
 ]
