@@ -1,5 +1,5 @@
-const { Model, DataTypes } = require("sequelize");
-const sequelize = require("../config/connection");
+const { Model, DataTypes } = require('sequelize');
+const sequelize = require('../config/connection');
 
 class Source extends Model {}
 
@@ -15,13 +15,16 @@ Source.init(
             type: DataTypes.STRING,
             allowNull: false,
         },
+        base_url: {
+            type: DataTypes.STRING,
+        },
     },
     {
         sequelize,
         timestamps: false,
         freezeTableName: true,
         underscored: true,
-        modelName: "source",
+        modelName: 'source',
     }
 );
 
