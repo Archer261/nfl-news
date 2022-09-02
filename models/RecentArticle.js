@@ -1,5 +1,5 @@
-const { Model, DataTypes } = require("sequelize");
-const sequelize = require("../config/connection");
+const { Model, DataTypes } = require('sequelize');
+const sequelize = require('../config/connection');
 
 class RecentArticle extends Model {}
 
@@ -15,17 +15,16 @@ RecentArticle.init(
             type: DataTypes.STRING,
             allowNull: false,
             references: {
-                model: "user",
-                key: "id",
+                model: 'user',
+                key: 'id',
             },
         },
-        article_id: {
-            type: DataTypes.INTEGER,
+        title: {
+            type: DataTypes.STRING,
+        },
+        link: {
+            type: DataTypes.STRING,
             allowNull: false,
-            references: {
-                model: "article",
-                key: "id",
-            },
         },
     },
     {
@@ -33,7 +32,7 @@ RecentArticle.init(
         timestamps: false,
         freezeTableName: true,
         underscored: true,
-        modelName: "recentarticle",
+        modelName: 'recentarticle',
     }
 );
 
