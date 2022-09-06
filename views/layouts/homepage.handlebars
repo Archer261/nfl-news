@@ -3,14 +3,17 @@
   
 
 <main class="teams">
+
+{{#each teams as |team|}}
     <a href="article.handlebars">
   <div class="container grid grid-cols-4 gap-2 mx-auto">
     <div class="w-full rounded">
-        <img class="teamLogo" src="../assets/atl_falcons.png"
-            alt="image">
+        <img class="teamLogo" src="../assets/{{logo_path}}"
+            alt="{{location}}">
     </div>
     </a>
-    
+ {{/each}}
+
 </div>
 </main>
 </body>
