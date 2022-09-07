@@ -5,8 +5,9 @@ const axios = require('axios');
 const https = require('https');
 
 const url = 'https://www.espn.com/nfl/team/_/name/det/detroit-lions';
+// const url = 'https://www.espn.com/nfl/team/_/name/{testamname}'; <--- need to import table data
 
-
+// SSL cert bypass for Axios
 const instance = axios.create({
     httpsAgent: new https.Agent({  
       rejectUnauthorized: false
@@ -18,19 +19,22 @@ const instance = axios.create({
   const agent = new https.Agent({  
     rejectUnauthorized: false
   });
-  
+// End of SSL cert bypass for Axios
 
+
+//Container for list of articles
 const articles = [];
 
+// Create function to extract article links and data from website
 function getLinks(url){
 
-    console.log('axios test: ----------------------------------------------------------------------------------------------------------------------------------------------------------');
     axios.get(url, { httpsAgent: agent })
 .then(response => {
     const html = response.data
     const $ = cheerio.load(html)
 
-    $(`a[href*=/story/]`, html).each(function () {
+    //Scape from article link within the pages' HTML
+    $(`a[href*=/story/]`, html).each(function () {   
 
         const title = $(this).text();
         const surl = $(this).attr('href');
@@ -39,8 +43,6 @@ function getLinks(url){
             title,
             surl
         })
-
-        console.log(`Test this a test`);
     })
 
     console.log(articles);
