@@ -3,12 +3,14 @@ const bcrypt = require("bcrypt");
 const User = require("../../models/User");
 
 // CREATE new user
-router.post("/", async (req, res) => {
+router.post("/signup", async (req, res) => {
     try {
         const dbUserData = await User.create({
+            firstName: req.body.first_name,
+            lastName: req.body.last_name,
             username: req.body.username,
             email: req.body.email,
-            password: req.body.password,
+            password: req.body.password
         });
 
         req.session.save(() => {
@@ -22,7 +24,7 @@ router.post("/", async (req, res) => {
     }
 });
 
-// Login
+// User login
 router.post("/login", async (req, res) => {
     try {
         const dbUserData = await User.findOne({
