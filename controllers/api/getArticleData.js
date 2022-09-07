@@ -7,8 +7,20 @@ const https = require('https');
 const url = 'https://www.espn.com/nfl/team/_/name/det/detroit-lions';
 // const url = 'https://www.espn.com/nfl/team/_/name/{testamname}'; <--- need to import table data
 
-// SSL cert bypass for Axios
-const instance = axios.create({
+
+
+
+//Container for list of articles
+
+
+// Create function to extract article links and data from website
+function getLinks(url){
+    
+    const articles = [];
+
+
+    // SSL cert bypass for Axios
+var instance = axios.create({
     httpsAgent: new https.Agent({  
       rejectUnauthorized: false
     })
@@ -20,13 +32,7 @@ const instance = axios.create({
     rejectUnauthorized: false
   });
 // End of SSL cert bypass for Axios
-
-
-//Container for list of articles
-const articles = [];
-
-// Create function to extract article links and data from website
-function getLinks(url){
+    
 
     axios.get(url, { httpsAgent: agent })
 .then(response => {
@@ -56,5 +62,7 @@ return articles;
 
 // });
 
-console.log('testhing console log');
+// console.log('testhing console log');
   getLinks(url);
+
+module.exports = getLinks;
