@@ -1,32 +1,37 @@
-<!doctype html>
-<html>
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <script src="https://cdn.tailwindcss.com"></script>
-  <link rel="stylesheet" href="../style/style.css">
-</head>
-<body>
-
 
 <<<<<<< HEAD
+{{#each Article}}
 <section class="articles">
 =======
+<body>
+  
+
 <main class="articles">
-  <div class="flex flex-row items-center justify-center ">
+
+   <div class="flex flex-row items-center justify-center ">
     <img class="object-cover w-full h-96 rounded-t-lg md:h-auto md:w-48 md:rounded-none md:rounded-l-lg" src="/assets/lv_raiders.png" alt="">
     
         <h5 class="mb-2 text-4xl font-bold tracking-tight text-gray-900 ">Las Vegas Raiders</h5>
-        
-    
-  </div>
+    </div>
+
 >>>>>>> cb7c0b42813fd33c26e53fbb1d8c671c1f81ea8b
   <div class="container my-12 mx-auto px-4 md:px-12">
     <div class="flex flex-wrap -mx-1 lg:-mx-4">
 
         <!-- Column -->
+<<<<<<< HEAD
         <div class="my-1 px-1 w-full md:w-1/2 lg:my-4 lg:px-4 lg:w-1/3">
 
+
+
+=======
+       
+        <!-- END Column -->
+
+        <!-- Column -->
+        <div class="my-1 px-1 w-full md:w-1/2 lg:my-4 lg:px-4 lg:w-1/3">
+
+>>>>>>> cb7c0b42813fd33c26e53fbb1d8c671c1f81ea8b
           <!-- Article -->
           <article class="overflow-hidden rounded-lg shadow-lg">
 
@@ -35,7 +40,11 @@
               <header class="flex items-center justify-between leading-tight p-2 md:p-4">
                   <h1 class="text-lg">
                       <a class="no-underline hover:underline text-black" href="#">
+<<<<<<< HEAD
+                          {{Article.title}}
+=======
                           Article Title
+>>>>>>> cb7c0b42813fd33c26e53fbb1d8c671c1f81ea8b
                       </a>
                   </h1>
                   <button class="w-auto h-auto">
@@ -59,7 +68,12 @@
                       </p>
                   </a>
                   <a class="no-underline text-grey-darker hover:text-red-dark" href="#">
+<<<<<<< HEAD
                       
+=======
+                      <span class="hidden">Like</span>
+                      <i class="fa fa-heart"></i>
+>>>>>>> cb7c0b42813fd33c26e53fbb1d8c671c1f81ea8b
                   </a>
               </footer>
 
@@ -69,9 +83,15 @@
       </div>
         <!-- END Column -->
 
+<<<<<<< HEAD
        
 
     </section>
-</body>
-</html>
+    {{/each}}
+=======
+    </div>
+</div>
 
+</main>
+</body>
+>>>>>>> cb7c0b42813fd33c26e53fbb1d8c671c1f81ea8b
