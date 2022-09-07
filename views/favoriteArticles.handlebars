@@ -1,7 +1,7 @@
 {{#if listExists}} 
   <ul>
-    {{#each favoriteArticle}}
-      {{!-- <li class={{}}>{{}}</li> --}}
+    {{#each favoriteArticles as |favoriteArticle| }}
+      <li class={{}}>{{}}</li>
     {{/each}}
   </ul>
 {{/if}}
