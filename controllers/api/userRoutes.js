@@ -1,6 +1,6 @@
-const router = require("express").Router();
-const bcrypt = require("bcrypt");
-const User = require("../../models/User");
+const router = require('express').Router();
+const bcrypt = require('bcrypt');
+const User = require('../../models/User');
 
 // CREATE new user
 router.post("/signup", async (req, res) => {

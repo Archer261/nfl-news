@@ -1,19 +1,15 @@
-
-<body>
-  
-
-<main class="teams">
+<section class="teams">
 
 {{#each teams as |team|}}
-    <a href="article.handlebars">
   <div class="container grid grid-cols-4 gap-2 mx-auto">
     <div class="w-full rounded">
         <img class="teamLogo" src="../assets/{{logo_path}}"
             alt="{{location}}">
     </div>
-    </a>
+  </div>
  {{/each}}
 
-</div>
-</main>
-</body>
+
+</section>
+
+
