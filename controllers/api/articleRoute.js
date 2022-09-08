@@ -1,45 +1,46 @@
 const router = require("express").Router();
 const bcrypt = require("bcrypt");
-const getLinks = require('../../')
+const getLinks = require('../../utils/getArticleData');
 const User = require("../../models/User");
 const Article = require("../../models/Article");
 const Source = require("../../models/Source");
-const Team = require('../../models/Team');
-const hbs = require('../../views/layouts');
 
+router.post('/savearticle', async (req, res) => {
+    try {
+        const dbArticleData = await Article.create({
+            user_id: req.body.user_id,
+            title: req.body.title,
+            link: req.body.link
+        });
 
-Team = Team.findOne({ where: { team_name: `Lions` } })
+        req.session.save(() => {
+            req.session.loggedIn = true;
 
-function doesThisWork(Team) {
-const teamName = Team.team_name;
-const teamNameUrl = Team.location_abbr + '/' + Team.location + Team.team_name;
+            res.status(200).json(dbArticleData);
+        });
+    } catch (err) {
+        console.log(err);
+        res.status(500).json(err);
+    }
+});
 
-console.log('test: ' + teamNameUrl);
+router.post('/deletearticle', async (req, res) => {
+    try {
+        await City.destroy({
+            where: { 
+            title: req.body.title,
+            user_id: req.body.user_id  
+        },
+          })
+        req.session.save(() => {
+            req.session.loggedIn = true;
 
-}
-// console.log(team_name);
-
-// router.get(`/${teamName}`, async (req, res) => {
-//     try {
-//         const dbUserData = await Tes.create({
-           
-//         });
-
-//         req.session.save(() => {
-//             req.session.loggedIn = true;
-
-//             res.status(200).json(dbUserData);
-
-
-//         });
-//     } catch (err) {
-//         console.log(err);
-//         res.status(500).json(err);
-//     }
-// });
-
-doesThisWork(Team);
-
-// handlebars.registerHelper('cheerioCall', getLinks(this));
+            res.status(200).json(dbUserData);
+        });
+    } catch (err) {
+        console.log(err);
+        res.status(500).json(err);
+    }
+});
 
 module.exports = router;
