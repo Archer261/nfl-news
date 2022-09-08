@@ -2,7 +2,7 @@ const router = require('express').Router();
 const { Team, Article, User, FanScore } = require('../models');
 const withAuth = require('../utils/auth');
 
-router.get('/dashboard', async (req, res) => {
+router.get('/', async (req, res) => {
     try {
         const teamData = await Team.findAll({});
 
@@ -61,7 +61,7 @@ router.get('/signup', (req, res) => {
         return;
     }
 
-    res.render('signup');
+    res.render('signUp');
 });
 
 // Get login template
@@ -71,7 +71,7 @@ router.get('/login', (req, res) => {
         return;
     }
 
-    res.render('login');
+    res.render('signInModal');
 });
 
 module.exports = router;
