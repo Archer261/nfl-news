@@ -3,6 +3,7 @@ const { ExpressHandlebars } = require('express-handlebars');
 const session = require('express-session');
 const { Team, Article, User, FanScore } = require('../models');
 const withAuth = require('../utils/auth');
+const getLinks = require('../utils/getArticleData');
 
 
 
@@ -29,6 +30,10 @@ router.get('/team/:team_name', async (req, res) => {
         const teamData = await Team.findOne({ where: { team_name: req.params.team_name } });
 
         const team = teamData.get({ plain: true });
+
+        const url = 'https://www.espn.com/nfl/team/_/name/' + team.location_abbr + '/' + team.location + '-' + team.team_name;
+
+        var cheerioData =  getLinks(url)
 
         res.render('article', {
             ...team,
