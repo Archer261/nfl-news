@@ -5,9 +5,6 @@ const { Team, Article, User, FanScore } = require('../models');
 const withAuth = require('../utils/auth');
 const getLinks = require('../utils/getArticleData');
 
-
-
-
 router.get('/', async (req, res) => {
     try {
         const teamData = await Team.findAll({});
@@ -28,19 +25,28 @@ router.get('/', async (req, res) => {
 router.get('/team/:team_name', async (req, res) => {
     try {
         const teamData = await Team.findOne({ where: { team_name: req.params.team_name } });
+        console.log('Team Data: ' + teamData.team_name);
 
-        const team = teamData.get({ plain: true });
+        const url =
+            'https://www.espn.com/nfl/team/_/name/' +
+            teamData.location_abbr +
+            '/' +
+            teamData.location +
+            '-' +
+            teamData.team_name;
 
-        const url = 'https://www.espn.com/nfl/team/_/name/' + team.location_abbr + '/' + team.location + '-' + team.team_name;
+        console.log(url);
 
-        var cheerioData =  getLinks(url)
-        const teamArticles = cheerioData.map((teamArticle) => teamArticle.get({ plain: true }));
-
-        //  console.log(cheerioData);
-
-        res.render('article', {
-            ...teamArticles,
-            loggedIn: req.session.loggedIn,
+        const articlePromise = new Promise((resolve, reject) => {
+            const articles = getLinks(url);
+            console.log('route articles: ' + articles);
+            resolve(articles);
+        }).then((articlePromise) => {
+            console.log('Article Promise: ' + articlePromise);
+            res.render('article', {
+                ...articlePromise,
+                loggedIn: req.session.loggedIn,
+            });
         });
     } catch (err) {
         res.status(500).json(err);
@@ -50,12 +56,13 @@ router.get('/team/:team_name', async (req, res) => {
 // Use withAuth middleware to prevent access to route
 router.get('/profile/:email', withAuth, async (req, res) => {
     try {
-
-        const userData = await User.findOne({ where: { email: req.params.email } }, {
-            attributes: { exclude: ['password'] },
-            include: [{ model: FanScore, RecentArticle, SavedArticle, Team }],
-        });
-
+        const userData = await User.findOne(
+            { where: { email: req.params.email } },
+            {
+                attributes: { exclude: ['password'] },
+                include: [{ model: FanScore, RecentArticle, SavedArticle, Team }],
+            }
+        );
 
         const user = userData.get({ plain: true });
 
