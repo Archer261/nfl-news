@@ -29,10 +29,17 @@ app.use(session(sess));
 app.engine('handlebars', hbs.engine);
 app.set('view engine', 'handlebars');
 
+// app.get("/", (req, res) => {
+//     res.render("homepage");
+//   });
+// app.get("/profile", (req, res) => {
+//     res.render("profile");
+//   });
+
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
+app.use(express.static(path.join(__dirname, 'public')));
 app.use('/assets', express.static(path.join(__dirname, '/assets')));
-
 app.use(routes);
 
 sequelize.sync({ force: false }).then(() => {

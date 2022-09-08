@@ -1,11 +1,15 @@
 [
     {
-        "source_name": "espn"
+        "source_name": "espn",
+        "base_uri": "https://www.espn.com/nfl/team/_/name/"
+        
     },
     {
-        "source_name": "sports_illustrated"
+        "source_name": "sports_illustrated",
+        "base_uri": "https://www.si.com/nfl/team/"
     },
     {
-        "source_name": "fox_sports"
+        "source_name": "fox_sports",
+        "base_uri": "https://www.foxsports.com/nfl/"
     }
 ]
