@@ -35,7 +35,7 @@ router.get('/team/:team_name', async (req, res) => {
 });
 
 // Use withAuth middleware to prevent access to route
-router.get('/profile', withAuth, async (req, res) => {
+router.get('/user/profile', withAuth, async (req, res) => {
     try {
         // Find the logged in user based on the session ID
         const userData = await User.findByPk(req.session.user_id, {
