@@ -1,15 +1,18 @@
 <section class="teams">
 
-{{#each teams as |team|}}
-  <div class="container grid grid-cols-4 gap-2 mx-auto">
+
+  <div class="container grid grid-cols-4 mx-auto justify-evenly">
+    {{#each teams as |team|}}
     <div class="w-full rounded">
+
         <buttton onclick="location.href='/{{team_name}}'"type="button"><img class="teamLogo" src="../assets/{{logo_path}}"></button>
+
             alt="{{location}}">
     </div>
-  </div>
+  
  {{/each}}
 
-
+</div>
 </section>
 
 

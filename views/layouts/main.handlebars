@@ -12,7 +12,7 @@
 </head>
 <body>
 
-  <nav class="bg-white px-2 sm:px-4 py-2.5 dark:bg-gray-900 fixed w-full z-20 top-0 left-0 border-b border-gray-200 dark:border-gray-600">
+  <nav class="bg-white px-2 sm:px-4 py-2.5 dark:bg-gray-900 sticky w-full z-20 top-0 left-0 border-b border-gray-200 dark:border-gray-600">
     <div class="container flex flex-wrap justify-between items-center mx-auto">
     <a href="/" class="flex items-center">
         <img src="../../assets/logo_3.png" class="mr-3 h-6 sm:h-9" alt="Flowbite Logo">
@@ -20,7 +20,7 @@
     </a>
     <div class="flex items-center md:order-2">
         {{#if loggedIn}}
-        <button class="block text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800" onclick="location.href='/logout'"type="button" data-modal-toggle="authentication-modal">
+        <button id="logout" class="block text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800" type="button" data-modal-toggle="authentication-modal">
             Logout
           </button>
         {{else}}
@@ -43,9 +43,12 @@
   </nav>
 
   <main>
+    <h2 {margin-top:10%}></h2>
       {{{body}}}
   </main>
-
+  {{#if loggedIn}}
+  <script src="../../assets/logout.js"></script>
+  {{/if}}
 
 </body>
 </html>
