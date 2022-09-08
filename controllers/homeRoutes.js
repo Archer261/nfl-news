@@ -1,6 +1,11 @@
 const router = require('express').Router();
+const { ExpressHandlebars } = require('express-handlebars');
+const session = require('express-session');
 const { Team, Article, User, FanScore } = require('../models');
 const withAuth = require('../utils/auth');
+
+
+
 
 router.get('/', async (req, res) => {
     try {
@@ -37,13 +42,7 @@ router.get('/team/:team_name', async (req, res) => {
 // Use withAuth middleware to prevent access to route
 router.get('/profile/:email', withAuth, async (req, res) => {
     try {
-        // Find the logged in user based on the session ID
-        // const userData = await User.findOne({ where: { email: req.params.email } });
-        // //(req.session.user_id, 
-        // {
-        //     attributes: { exclude: ['password'] },
-        //     include: [{ model: FanScore, RecentArticle, SavedArticle, Team }],
-        // });
+
         const userData = await User.findOne({ where: { email: req.params.email } }, {
             attributes: { exclude: ['password'] },
             include: [{ model: FanScore, RecentArticle, SavedArticle, Team }],

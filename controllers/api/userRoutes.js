@@ -1,10 +1,9 @@
 const router = require('express').Router();
 const { User } = require('../../models');
+const setSessionStorage = require("../../utils/helpers");
 
 
-function setSessionStorage(email) {
-    sessionStorage.setItem('userID', email);    
-}
+var sessionEmail = '';
 
 // CREATE new user
 router.post('/', async (req, res) => {
@@ -21,6 +20,9 @@ router.post('/', async (req, res) => {
 
             res.status(200).json(dbUserData);
         });
+
+        
+
     } catch (err) {
         console.log(err);
         res.status(500).json(err);
@@ -34,7 +36,9 @@ router.post('/login', async (req, res) => {
             where: {
                 email: req.body.email,
             },
-        });
+});
+
+sessionEmail = req.body.email;
 
         if (!dbUserData) {
             res.status(400).json({ message: 'Incorrect email or password. Please try again!' });
@@ -53,8 +57,10 @@ router.post('/login', async (req, res) => {
 
             res.status(200).json({ user: dbUserData, message: 'You are now logged in!' });
         });
+
         
-        setSessionStorage(req.session.email);
+        
+        setSessionStorage(sessionEmail);
         
     } catch (err) {
         console.log(err);
