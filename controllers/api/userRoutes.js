@@ -60,7 +60,7 @@ sessionEmail = req.body.email;
 
         
         
-        setSessionStorage(sessionEmail);
+        sessionStorage.setItem('login','test')
         
     } catch (err) {
         console.log(err);

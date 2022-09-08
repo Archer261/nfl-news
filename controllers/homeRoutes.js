@@ -33,15 +33,24 @@ router.get('/team/:team_name', async (req, res) => {
 
         const url = 'https://www.espn.com/nfl/team/_/name/' + team.location_abbr + '/' + team.location + '-' + team.team_name;
 
-        var cheerioData =  getLinks(url)
-        const teamArticles = cheerioData.map((teamArticle) => teamArticle.get({ plain: true }));
+        // var teamArticles =  getLinks(url)
 
+
+        const articlePromise = new Promise((resolve, reject) => {
+            return getLinks(url);
+          });
+
+          articlePromise.then((articlePromise) => {
+
+            res.render('article', {
+                ...articlePromise,
+                loggedIn: req.session.loggedIn,
+            });
+
+          })
         //  console.log(cheerioData);
 
-        res.render('article', {
-            ...teamArticles,
-            loggedIn: req.session.loggedIn,
-        });
+
     } catch (err) {
         res.status(500).json(err);
     }
