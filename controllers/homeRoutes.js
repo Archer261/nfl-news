@@ -71,7 +71,7 @@ router.get('/login', (req, res) => {
         return;
     }
 
-    res.render('signInModal');
+    res.render('signIn');
 });
 
 module.exports = router;
