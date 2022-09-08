@@ -13,7 +13,7 @@ function doesThisWork(Team) {
 const teamName = Team.team_name;
 const teamNameUrl = Team.location_abbr + '/' + Team.location + Team.team_name;
 
-console.log(teamNameUrl);
+console.log('test: ' + teamNameUrl);
 
 }
 // console.log(team_name);
