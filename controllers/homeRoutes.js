@@ -34,9 +34,12 @@ router.get('/team/:team_name', async (req, res) => {
         const url = 'https://www.espn.com/nfl/team/_/name/' + team.location_abbr + '/' + team.location + '-' + team.team_name;
 
         var cheerioData =  getLinks(url)
+        const teamArticles = cheerioData.map((teamArticle) => teamArticle.get({ plain: true }));
+
+        //  console.log(cheerioData);
 
         res.render('article', {
-            ...team,
+            ...teamArticles,
             loggedIn: req.session.loggedIn,
         });
     } catch (err) {
