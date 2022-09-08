@@ -4,7 +4,9 @@
   <div class="container grid grid-cols-4 mx-auto justify-evenly">
     {{#each teams as |team|}}
     <div class="w-full rounded">
-        <img class="teamLogo" src="/assets/{{logo_path}}"
+
+        <buttton onclick="location.href='/{{team_name}}'"type="button"><img class="teamLogo" src="../assets/{{logo_path}}"></button>
+
             alt="{{location}}">
     </div>
   
