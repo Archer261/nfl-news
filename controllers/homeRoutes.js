@@ -2,7 +2,7 @@ const router = require('express').Router();
 const { Team, Article, User, FanScore } = require('../models');
 const withAuth = require('../utils/auth');
 
-router.get('/', async (req, res) => {
+router.get('/dashboard', async (req, res) => {
     try {
         const teamData = await Team.findAll({});
 

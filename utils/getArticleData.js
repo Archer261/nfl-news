@@ -1,5 +1,7 @@
 const mysql = require("../../config/connection");
-const cheerio = require("cheerio");
+const source = require("../../models/Source");
+const article = require("../../models/Article");
+const cheerio = require("cheerio");                                              
 const axios = require('axios');
 
 const https = require('https');
