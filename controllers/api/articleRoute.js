@@ -2,12 +2,13 @@ const router = require("express").Router();
 const bcrypt = require("bcrypt");
 const getLinks = require('../../')
 const User = require("../../models/User");
-const Article = require("../../models/Article")
-const Source = require("../../models/Source")
-const Team = require('../../models/Team')
+const Article = require("../../models/Article");
+const Source = require("../../models/Source");
+const Team = require('../../models/Team');
+const hbs = require('../../views/layouts');
 
 
-// const teams = [];
+Team = Team.findOne({ where: { team_name: `Lions` } })
 
 function doesThisWork(Team) {
 const teamName = Team.team_name;
@@ -38,5 +39,7 @@ console.log('test: ' + teamNameUrl);
 // });
 
 doesThisWork(Team);
+
+// handlebars.registerHelper('cheerioCall', getLinks(this));
 
 module.exports = router;
