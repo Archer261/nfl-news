@@ -5,6 +5,19 @@ const User = require("../../models/User");
 const Article = require("../../models/Article");
 const Source = require("../../models/Source");
 
+
+
+router.post('/', async (req, res) => {
+    try {
+        res.redirect('/team/:team_name')
+    } catch (err) {
+        console.log(err);
+        res.status(500).json(err);
+    }
+});
+
+
+
 router.post('/savearticle', async (req, res) => {
     try {
         const dbArticleData = await Article.create({
