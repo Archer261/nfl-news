@@ -12,7 +12,7 @@ router.get('/', async (req, res) => {
         // Pass serialized data and session flag into template
         res.render('homepage', {
             teams,
-            logged_in: req.session.logged_in,
+            loggedIn: req.session.loggedIn,
         });
     } catch (err) {
         res.status(500).json(err);
@@ -27,7 +27,7 @@ router.get('/team/:team_name', async (req, res) => {
 
         res.render('article', {
             ...team,
-            logged_in: req.session.logged_in,
+            loggedIn: req.session.loggedIn,
         });
     } catch (err) {
         res.status(500).json(err);
@@ -47,7 +47,7 @@ router.get('/profile', withAuth, async (req, res) => {
 
         res.render('profile', {
             ...user,
-            logged_in: true,
+            loggedIn: true,
         });
     } catch (err) {
         res.status(500).json(err);
