@@ -65,6 +65,6 @@ return articles;
 // });
 
 // console.log('testhing console log');
-  getLinks(url);
+  // getLinks(url);
 
 module.exports = getLinks;
