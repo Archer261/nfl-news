@@ -53,7 +53,7 @@ var instance = axios.create({
         })
     })
 
-    console.log(articles);
+    return articles;
 })
 return articles;
 

@@ -1,7 +1,12 @@
 const router = require('express').Router();
+const { ExpressHandlebars } = require('express-handlebars');
+const session = require('express-session');
 const { Team, Article, User, FanScore } = require('../models');
 const withAuth = require('../utils/auth');
 const getLinks = require('../utils/getArticleData');
+
+
+
 
 router.get('/', async (req, res) => {
     try {
@@ -29,9 +34,12 @@ router.get('/team/:team_name', async (req, res) => {
         const url = 'https://www.espn.com/nfl/team/_/name/' + team.location_abbr + '/' + team.location + '-' + team.team_name;
 
         var cheerioData =  getLinks(url)
+        const teamArticles = cheerioData.map((teamArticle) => teamArticle.get({ plain: true }));
+
+        //  console.log(cheerioData);
 
         res.render('article', {
-            ...team,
+            ...teamArticles,
             loggedIn: req.session.loggedIn,
         });
     } catch (err) {
@@ -40,13 +48,14 @@ router.get('/team/:team_name', async (req, res) => {
 });
 
 // Use withAuth middleware to prevent access to route
-router.get('/user/profile', withAuth, async (req, res) => {
+router.get('/profile/:email', withAuth, async (req, res) => {
     try {
-        // Find the logged in user based on the session ID
-        const userData = await User.findOne({ where: { team_name: req.params.team_name } }, {
+
+        const userData = await User.findOne({ where: { email: req.params.email } }, {
             attributes: { exclude: ['password'] },
             include: [{ model: FanScore, RecentArticle, SavedArticle, Team }],
         });
+
 
         const user = userData.get({ plain: true });
 
