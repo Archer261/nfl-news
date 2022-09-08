@@ -26,7 +26,7 @@ router.post('/savearticle', async (req, res) => {
 
 router.post('/deletearticle', async (req, res) => {
     try {
-        await City.destroy({
+        await Article.destroy({
             where: { 
             title: req.body.title,
             user_id: req.body.user_id  
