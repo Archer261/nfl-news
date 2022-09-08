@@ -3,7 +3,6 @@
         "first_name": "Roger",
         "last_name": "Goodell",
         "email": "thecommish@nfl.com",
-        "username": "rogerdodger",
         "password": "TheBadGuy123",
         "favorite_team_id": null,
         "fanscore_id": null 
@@ -12,7 +11,6 @@
         "first_name": "Dan",
         "last_name": "Campbell",
         "email": "coach@lions.com",
-        "username": "thedude",
         "password": "3largelattes",
         "favorite_team_id": null,
         "fanscore_id": null
