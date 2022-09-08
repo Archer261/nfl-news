@@ -1,6 +1,7 @@
 const router = require('express').Router();
 const { Team, Article, User, FanScore } = require('../models');
 const withAuth = require('../utils/auth');
+const getLinks = require('../utils/getArticleData');
 
 router.get('/', async (req, res) => {
     try {
@@ -25,6 +26,10 @@ router.get('/team/:team_name', async (req, res) => {
 
         const team = teamData.get({ plain: true });
 
+        const url = 'https://www.espn.com/nfl/team/_/name/' + team.location_abbr + '/' + team.location + '-' + team.team_name;
+
+        var cheerioData =  getLinks(url)
+
         res.render('article', {
             ...team,
             loggedIn: req.session.loggedIn,
@@ -38,7 +43,7 @@ router.get('/team/:team_name', async (req, res) => {
 router.get('/user/profile', withAuth, async (req, res) => {
     try {
         // Find the logged in user based on the session ID
-        const userData = await User.findByPk(req.session.user_id, {
+        const userData = await User.findOne({ where: { team_name: req.params.team_name } }, {
             attributes: { exclude: ['password'] },
             include: [{ model: FanScore, RecentArticle, SavedArticle, Team }],
         });
