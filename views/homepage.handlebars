@@ -1,15 +1,16 @@
 <section class="teams">
 
-{{#each teams as |team|}}
-  <div class="container grid grid-cols-4 gap-2 mx-auto">
+
+  <div class="container grid grid-cols-4 mx-auto justify-evenly">
+    {{#each teams as |team|}}
     <div class="w-full rounded">
-        <img class="teamLogo" src="/assets/atl_falcons.png"
+        <img class="teamLogo" src="/assets/{{logo_path}}"
             alt="{{location}}">
     </div>
-  </div>
+  
  {{/each}}
 
-
+</div>
 </section>
 
 
