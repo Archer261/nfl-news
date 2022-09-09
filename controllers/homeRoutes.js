@@ -12,8 +12,11 @@ router.get('/', async (req, res) => {
         // Serialize data so the template can read it
         const teams = teamData.map((team) => team.get({ plain: true }));
 
+        const sessionId = req.session.id;
+
         // Pass serialized data and session flag into template
         res.render('homepage', {
+            sessionId,
             teams,
             loggedIn: req.session.loggedIn,
         });
@@ -87,26 +90,6 @@ router.get('/team/:team_name', async (req, res) => {
             .catch((err) => console.error('issue with promise', err));
         // const articlePromise = new Promise((resolve, reject) => {
 
-<<<<<<< HEAD
-        // var teamArticles =  getLinks(url)
-
-
-        const articlePromise = new Promise((resolve, reject) => {
-            return getLinks(url);
-          });
-
-          articlePromise.then((articlePromise) => {
-
-            res.render('article', {
-                ...articlePromise,
-                loggedIn: req.session.loggedIn,
-            });
-
-          })
-        //  console.log(cheerioData);
-
-
-=======
         //     resolve(articles);
         // }).then((articlePromise) => {
         //     console.log('Article Promise: ' + articlePromise);
@@ -116,14 +99,13 @@ router.get('/team/:team_name', async (req, res) => {
         //         loggedIn: req.session.loggedIn,
         //     });
         // });
->>>>>>> 131694c018b9076526bc234771bda5c13adc4054
     } catch (err) {
         res.status(500).json(err);
     }
 });
 
 // Use withAuth middleware to prevent access to route
-router.get('/profile/:email', withAuth, async (req, res) => {
+router.get('/profile/:sessionId', withAuth, async (req, res) => {
     try {
         const userData = await User.findOne(
             { where: { email: req.params.email } },
@@ -139,6 +121,8 @@ router.get('/profile/:email', withAuth, async (req, res) => {
             ...user,
             loggedIn: true,
         });
+           
+
     } catch (err) {
         res.status(500).json(err);
     }
