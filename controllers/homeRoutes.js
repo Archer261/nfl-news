@@ -46,7 +46,7 @@ router.get('/team/:team_name', async (req, res) => {
         getLinks(url).then((articles) => {
             console.log('look here: ' + JSON.stringify(articles));
             res.render('article', {
-                ...articles,
+                articles,
                 loggedIn: req.session.loggedIn,
             });
         });
