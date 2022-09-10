@@ -29,7 +29,7 @@ function getLinks(url) {
     });
     // End of SSL cert bypass for Axios
 
-    new Promise((resolve, reject) => {
+    return new Promise((resolve, reject) => {
         axios.get(url, { httpsAgent: agent }).then((response) => {
             const html = response.data;
             const $ = cheerio.load(html);
@@ -43,25 +43,12 @@ function getLinks(url) {
                     title,
                     surl,
                 });
-                //console.log('getArticles: ' + articles);
-                //return articles;
             });
             console.log('getArticleData: ' + JSON.stringify(articles));
             console.log('array length: ' + articles.length);
-            const articleResponse = JSON.stringify(articles);
-            articles.length === 0 ? reject(new Error('No articles found')) : resolve(articleResponse);
+            articles.length === 0 ? reject(new Error('No articles found')) : resolve(JSON.stringify(articles));
         });
-        //console.log('getArticles3: ' + JSON.stringify(articles));
-        //return articles;
     });
 }
-
-// app.get('/', function (req, res) {
-//     getLinks(url);
-
-// });
-
-// console.log('testhing console log');
-// getLinks(url);
 
 module.exports = getLinks;
