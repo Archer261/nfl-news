@@ -1,14 +1,7 @@
-const Handlebars = require('../server');
-
-function getSessionUser(sessionUserID){
-    return sessionStorage.getItem('userID')
-    
-    }
-
-    function setSessionStorage(email) {
-        // sessionStorage.setItem('login', '{email}');  
-        
-    };
-
-    module.exports = setSessionStorage;
-   
+module.exports = {
+    format_profile_url: (email) => {
+        const url = '"location.href=\'/profile/' + email + '\'"';
+        console.log(url);
+        return url;
+    },
+};
