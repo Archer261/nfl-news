@@ -33,8 +33,7 @@ router.get("/team/:team_name", async (req, res) => {
     const teamData = await Team.findOne({
       where: { team_name: req.params.team_name },
     });
-    console.log("Team Data: " + teamData.team_name);
-    const baseUrl = "https://www.espn.com/nfl/story/";
+
     const url =
       "https://www.espn.com/nfl/team/_/name/" +
       teamData.location_abbr +
@@ -43,15 +42,9 @@ router.get("/team/:team_name", async (req, res) => {
       "-" +
       teamData.team_name;
 
-    // console.log(url);
-    console.log(typeof articles);
-
     getLinks(url).then((articles) => {
-      //   console.log("look here: " + JSON.stringify(articles));
       res.render("article", {
         articles,
-        url,
-        baseUrl,
         loggedIn: req.session.loggedIn,
       });
     });
@@ -61,25 +54,28 @@ router.get("/team/:team_name", async (req, res) => {
 });
 
 // Use withAuth middleware to prevent access to route
-router.get("/profile/:email", withAuth, async (req, res) => {
-  try {
-    const userData = await User.findOne(
-      { where: { email: req.params.email } },
-      {
-        attributes: { exclude: ["password"] },
-        include: [{ model: FanScore, RecentArticle, SavedArticle, Team }],
-      }
-    );
+router.get("/profile/:sessionId", withAuth, async (req, res) => {
+  console.log(req.session.email);
 
-    const user = userData.get({ plain: true });
+  const userData = await User.findOne(
+    { where: { email: req.session.email } },
+    {
+      attributes: { exclude: ["password"] },
+      include: [{ model: FanScore, Team }],
+    }
+  );
+  const sessionId = req.session.id;
+  const user = userData.get({ plain: true });
+  console.log(user);
 
-    res.render("profile", {
-      ...user,
-      loggedIn: true,
-    });
-  } catch (err) {
-    res.status(500).json(err);
-  }
+  res.render("profile", {
+    ...user,
+    sessionId,
+    loggedIn: true,
+  });
+  //   } catch (err) {
+  //     res.status(500).json(err);
+  //   }
 });
 
 // Get signup template
