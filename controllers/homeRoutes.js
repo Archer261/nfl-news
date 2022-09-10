@@ -43,27 +43,13 @@ router.get('/team/:team_name', async (req, res) => {
 
         console.log(url);
 
-        // const articles = await getLinks(url);
-        // console.log('route articles: ' + articles);
-        const articles = await getLinks(url);
-
-        console.log('look here: ' + articles);
-        res.render('article', {
-            ...articles,
-            loggedIn: req.session.loggedIn,
+        getLinks(url).then((articles) => {
+            console.log('look here: ' + JSON.stringify(articles));
+            res.render('article', {
+                ...articles,
+                loggedIn: req.session.loggedIn,
+            });
         });
-
-        // const articlePromise = new Promise((resolve, reject) => {
-
-        //     resolve(articles);
-        // }).then((articlePromise) => {
-        //     console.log('Article Promise: ' + articlePromise);
-
-        //     res.render('article', {
-        //         ...articlePromise,
-        //         loggedIn: req.session.loggedIn,
-        //     });
-        // });
     } catch (err) {
         res.status(500).json(err);
     }
