@@ -20,7 +20,7 @@ Touchdown Daily is an aggregate NFL News website where the user can read and sav
 
 ## Deployed Website
 
-![Touchdown Daily Homepage](/nfl-news/tree/main/assets/td_daily.jpg?raw=true)
+![Touchdown Daily Homepage](assets/td_daily.jpg)
 
 ## Challenges and Future Development
 
