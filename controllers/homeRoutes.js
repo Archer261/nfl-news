@@ -14,10 +14,13 @@ router.get('/', async (req, res) => {
 
         const sessionId = req.session.id;
 
+        console.log('session email: ' + req.session.email);
+
         // Pass serialized data and session flag into template
         res.render('homepage', {
             sessionId,
             teams,
+            sessionEmail: req.session.email,
             loggedIn: req.session.loggedIn,
         });
     } catch (err) {
@@ -67,7 +70,7 @@ router.get('/team/:team_name', async (req, res) => {
 });
 
 // Use withAuth middleware to prevent access to route
-router.get('/profile/:sessionId', withAuth, async (req, res) => {
+router.get('/profile/:email', withAuth, async (req, res) => {
     try {
         const userData = await User.findOne(
             { where: { email: req.params.email } },
@@ -83,8 +86,6 @@ router.get('/profile/:sessionId', withAuth, async (req, res) => {
             ...user,
             loggedIn: true,
         });
-           
-
     } catch (err) {
         res.status(500).json(err);
     }
