@@ -30,6 +30,11 @@ For future development we would like to beef up the user profile. One example is
 
 Other future development plans are adding more news sources (we are currently only pulling from ESPN). We also want to develop sister sites for other sports such as basketball and baseball.
 
+**App Links**
+
+- Heroku: https://morning-savannah-61110.herokuapp.com/
+- Git Repo: https://github.com/Archer261/nfl-news
+
 ## Credits
 
 **Developers**
