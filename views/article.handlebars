@@ -7,10 +7,10 @@
         <!-- Column -->
         <div class="my-1 px-1 w-full md:w-1/2 lg:my-4 lg:px-4 lg:w-1/3">
 
-
+        {{articles}}
 
           <!-- Article -->
-          {{#each array as |teamArticle|}}
+          {{#each articles as |article|}}
           <article class="overflow-hidden rounded-lg shadow-lg">
 
              
@@ -18,7 +18,7 @@
               <header class="flex items-center justify-between leading-tight p-2 md:p-4">
                   <h1 class="text-lg">
                       <a class="no-underline hover:underline text-black" href="#">
-                          {{!-- {{Article.title}} --}} <p>{{title}}</p>
+                          <p>{{article.title}}</p>
                       </a>
                   </h1>
                   {{#if article_saved}}

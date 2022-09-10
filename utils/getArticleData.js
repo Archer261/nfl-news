@@ -38,14 +38,11 @@ function getLinks(url) {
             $(`a[href*=/story/]`, html).each(function () {
                 const title = $(this).text();
                 const surl = $(this).attr('href');
-                console.log('getSingleArticleTitle: ' + $(this).text());
                 articles.push({
                     title,
                     surl,
                 });
             });
-            console.log('getArticleData: ' + JSON.stringify(articles));
-            console.log('array length: ' + articles.length);
             articles.length === 0 ? reject(new Error('No articles found')) : resolve(JSON.stringify(articles));
         });
     });

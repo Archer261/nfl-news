@@ -44,7 +44,7 @@ router.get('/team/:team_name', async (req, res) => {
         console.log(url);
 
         getLinks(url).then((articles) => {
-            console.log('look here: ' + articles);
+            console.log('look here: ' + JSON.stringify(articles));
             res.render('article', {
                 ...articles,
                 loggedIn: req.session.loggedIn,
