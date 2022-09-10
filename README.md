@@ -33,7 +33,8 @@ Other future development plans are adding more news sources (we are currently on
 ## Credits
 
 **Developers**
-Joseph - https://github.com/Archer261
-Dustin - https://github.com/dtierney21
-Jonathan - https://github.com/JonCerruti
-Marta - https://github.com/MartaS333
+
+- Joseph - https://github.com/Archer261
+- Dustin - https://github.com/dtierney21
+- Jonathan - https://github.com/JonCerruti
+- Marta - https://github.com/MartaS333
